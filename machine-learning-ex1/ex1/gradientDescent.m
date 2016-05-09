@@ -16,12 +16,10 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
-
-
-
-
-
-
+    diff = (X*theta - y)*alpha/m;
+    for items = 1:size(X,2)
+        theta(items) = theta(items)-sum(diff .* X(:,items));
+    end
 
     % ============================================================
 
