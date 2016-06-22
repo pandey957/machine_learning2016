@@ -52,13 +52,17 @@ error_val   = zeros(m, 1);
 %
 
 % ---------------------- Sample Solution ----------------------
-
-
-
-
-
-
-
+for i = 1:m
+    new_x = X(1:i,:);
+    new_y = y(1:i,:);
+    val_size = size(Xval,1);
+    theta = trainLinearReg(new_x,new_y,lambda);
+    error_train(i,1) = (new_x * theta - new_y)' *  (new_x * theta - new_y)/(2*i);
+    error_val(i,1) = (Xval * theta - yval)' * (Xval * theta - yval)/(2*val_size);    
+end
+plot(error_train,error_val);
+xlabel('Number of training samples');
+ylabel('Error');
 % -------------------------------------------------------------
 
 % =========================================================================
