@@ -20,13 +20,14 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
-
-
-
+for i = 1:length(idx)
+    errors = zeros(1,K);
+    for j = 1:K
+        diff_record = X(i,:) - centroids(j,:);
+        errors(1,j) = diff_record * diff_record';        
+    end
+    [min_val, idx(i,1)] = min(errors);
+end
 % =============================================================
 
 end
