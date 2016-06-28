@@ -85,8 +85,6 @@ tridelta_2=0;
 	Theta1_grad=(1/m).*tridelta_1;
     Theta2_grad=(1/m).*tridelta_2;    
 %end
-
-
 % Part 3: Implement regularization with the cost function and gradients.
 %
 %         Hint: You can implement this around the code for
