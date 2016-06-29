@@ -42,5 +42,13 @@ Theta_grad = zeros(size(Theta));
 diff = (X*Theta' -Y) .* R;
 J = 1/2 * (diff(:)' * diff(:));
 % =============================================================
+
+for i =1:size(X,1)
+    idx = find(R(i,:)==1);
+    X_grad(i,:) = X(i,:) * Thet
+    
+end
+
 grad = [X_grad(:); Theta_grad(:)];
+
 end
